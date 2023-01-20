@@ -7,11 +7,14 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 async function ListBank() {
   try {
-    const response = await axios.get("/api/check", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await axios.get(
+      "http://cors-anywhere.herokuapp.com/https://cekrek.heirro.dev/api/check",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     return response.data;
   } catch {
     console.log("error");
@@ -21,7 +24,7 @@ async function ListBank() {
 async function getRek(accountBank, accountNumber) {
   try {
     const response = await axios.post(
-      "/api/check",
+      "http://cors-anywhere.herokuapp.com/https://cekrek.heirro.dev/api/check",
       qs.stringify({
         accountBank: accountBank,
         accountNumber: accountNumber,
