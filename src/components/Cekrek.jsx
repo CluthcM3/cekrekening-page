@@ -11,6 +11,7 @@ async function ListBank() {
       "http://cors-anywhere.herokuapp.com/https://cekrek.heirro.dev/api/check",
       {
         headers: {
+          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }
@@ -31,6 +32,7 @@ async function getRek(accountBank, accountNumber) {
       }),
       {
         headers: {
+          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/x-www-form-urlencoded",
         },
       }
