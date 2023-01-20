@@ -7,15 +7,16 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 async function ListBank() {
   try {
-    const response = await axios.get(
-      "http://cors-anywhere.herokuapp.com/https://cekrek.heirro.dev/api/check",
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.get("https://cekrek.heirro.dev/api/check", {
+      headers: {
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+        "Access-Control-Allow-Headers":
+          "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+        "Content-Type": "application/json",
+      },
+    });
     return response.data;
   } catch {
     console.log("error");
@@ -25,14 +26,18 @@ async function ListBank() {
 async function getRek(accountBank, accountNumber) {
   try {
     const response = await axios.post(
-      "http://cors-anywhere.herokuapp.com/https://cekrek.heirro.dev/api/check",
+      "https://cekrek.heirro.dev/api/check",
       qs.stringify({
         accountBank: accountBank,
         accountNumber: accountNumber,
       }),
       {
         headers: {
+          "Access-Control-Allow-Credentials": true,
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+          "Access-Control-Allow-Headers":
+            "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Content-Type": "application/x-www-form-urlencoded",
         },
       }
@@ -90,7 +95,7 @@ function Cekrek() {
   // console.log(finish[0].accountName);
   return (
     <div className="w-full h-full">
-      <div className="h-32 md:w-[70%] w-[90%] mt-4 mx-auto text-center rounded-xl bg-[#e9ecef]">
+      <div className="h-32  md:w-[70%] w-[90%] mt-4 mx-auto text-center rounded-xl bg-[#e9ecef] ">
         <div className="pt-4">
           <h1 className="text-2xl font-bold">Cek Rekening</h1>
           <p>Anda ingin bertransaksi online?</p>
