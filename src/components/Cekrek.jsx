@@ -9,11 +9,9 @@ async function ListBank() {
   try {
     const response = await axios.get("https://cekrek.heirro.dev/api/check", {
       headers: {
-        "Access-Control-Allow-Credentials": true,
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-        "Access-Control-Allow-Headers":
-          "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Content-Type": "application/json",
       },
     });
@@ -33,11 +31,9 @@ async function getRek(accountBank, accountNumber) {
       }),
       {
         headers: {
-          "Access-Control-Allow-Credentials": true,
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-          "Access-Control-Allow-Headers":
-            "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
           "Content-Type": "application/x-www-form-urlencoded",
         },
       }
