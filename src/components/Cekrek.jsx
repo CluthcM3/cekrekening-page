@@ -7,11 +7,8 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 async function ListBank() {
   try {
-    const response = await axios.get("https://cekrek.heirro.dev/api/check", {
+    const response = await axios.get("/api/check", {
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Content-Type": "application/json",
       },
     });
@@ -24,16 +21,13 @@ async function ListBank() {
 async function getRek(accountBank, accountNumber) {
   try {
     const response = await axios.post(
-      "https://cekrek.heirro.dev/api/check",
+      "/api/check",
       qs.stringify({
         accountBank: accountBank,
         accountNumber: accountNumber,
       }),
       {
         headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers": "Content-Type",
-          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
           "Content-Type": "application/x-www-form-urlencoded",
         },
       }
@@ -88,7 +82,6 @@ function Cekrek() {
       console.log("data nggk boleh kosong");
     }
   }
-  // console.log(finish[0].accountName);
   return (
     <div className="w-full h-full">
       <div className="h-32  md:w-[70%] w-[90%] mt-4 mx-auto text-center rounded-xl bg-[#e9ecef] ">
